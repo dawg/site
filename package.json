@@ -1,0 +1,12 @@
+{
+    "name": "dawg.github.io",
+    "version": "0.1.0",
+    "scripts": {
+        "dev": "vuepress dev",
+        "build": "vuepress build"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "vuepress": "^0.14.5"
+    }
+}

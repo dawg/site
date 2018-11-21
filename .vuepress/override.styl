@@ -1,0 +1,44 @@
+$accentColor = #1976D2
+$textColor = #eaecef
+$borderColor = #454856
+$codeBgColor = #282c34
+
+.theme-container, .links, .navbar, .sidebar
+  background-color: #21242B!important
+
+.custom-block.tip
+  background-color: #2a2e37!important
+
+.search-box input
+  background-color: #313437
+
+.feature
+  border-radius: 10px
+  padding: 0 15px
+  position: relative
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+  margin: 0 10px
+  max-width: 25%!important;
+
+  &:hover
+    transform: scale(1.05, 1.05);
+    // box-shadow: 0px 0px 38px 13px rgba(0,0,0,0.15);
+    // transition: box-shadow 0.2s ease-in-out;
+
+  &:hover::after
+    opacity: 1;
+
+
+.feature::after
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+  left: 0
+  top: 0
