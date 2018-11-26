@@ -2,6 +2,7 @@
 home: true
 actionText: Download DAWG
 actionLink: /guide/installation
+heroImage: /logo.svg
 features:
 - title: Cross Platform
   details: Developed using web technologies, DAWG supports all major platforms.
