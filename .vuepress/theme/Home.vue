@@ -36,6 +36,7 @@
         class="feature"
         v-for="(feature, index) in data.features"
         :key="index"
+        :style="`flex-basis: ${100 / (data.features.length + 1)}%`"
       >
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
@@ -48,8 +49,28 @@
       class="footer"
       v-if="data.footer"
     >
-      {{ data.footer }}
-    </div>
+      <div class="links-wrapper">
+        <div
+          v-for="set in linkSets"
+          :key="set.title"
+          class="links"
+        >
+          <div class="set-name">{{ set.title }}</div>
+          <div
+            v-for="link in set.links"
+            :key="set.name"
+            class="link"
+          >
+            <a 
+              :href="link.link"
+              target="__blank"
+            >
+              {{ link.name }}
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
   </div>
 </template>
 
@@ -58,6 +79,53 @@ import Home from '@default-theme/Home.vue'
 
 export default {
   extends: Home,
+  data: () => ({
+    linkSets: [
+      {
+        title: 'Socials',
+        links: [
+          {
+            name: 'GitHub',
+            link: 'https://github.com/dawg/vusic',
+          },
+          {
+            name: 'Facebook',
+            link: 'https://github.com/dawg/vusic',
+          }
+        ]  
+      },
+      {
+        title: 'Feedback',
+        links: [
+          {
+            name: 'Feature Request',
+            link: 'https://github.com/dawg/vusic/issues/new',
+          },
+          {
+            name: 'Bug Report',
+            link: 'https://github.com/dawg/vusic/issues/new',
+          }
+        ]  
+      },
+      {
+        title: 'Download',
+        links: [
+          {
+            name: 'Windows',
+            link: '',
+          },
+          {
+            name: 'macOS',
+            link: '',
+          },
+          {
+            name: 'Linux',
+            link: '',
+          }
+        ]
+      }
+    ]
+  })
 }
 </script>
 
@@ -72,6 +140,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
+}
+
+.feature p {
+  font-size: 15px;
+}
+
+.features {
+  max-width: 1000px;
+  margin: auto;
 }
 
 .logo-wrapper {
@@ -81,13 +159,17 @@ export default {
   max-width: 200px;
   max-height: 200px;
   margin: 3em 0 1em 0;
-	animation: animShadow 0.66875s infinite ease;
+	animation: animShadow 2s infinite ease;
 }
 
 .logo {
   filter: invert(100%);
   max-height: 150px!important;
   margin: 1.5em!important;
+}
+
+.feature {
+  height: 230px;
 }
 
 @keyframes animShadow {
@@ -112,11 +194,38 @@ export default {
   border-radius: 25px!important;
   border: 1px solid white!important;
 }
+
+.links {
+  flex: 1;
+}
 </style>
 
 
 <style lang="stylus" scoped>
-// .action-button
-//   background-color: lighten(#1976d2, 20%)!important
+@import '../theme.styl'
+
+.features
+  border-top: none
+
+.link a, .set-name
+  color: $textColor
+
+.link
+  text-align: left
+  margin: 10px 0
+
+.set-name
+  text-transform: uppercase
+  margin-bottom: 20px
+  text-align: left
+  font-weight: 200
+
+.footer
+  padding: 40px 0
+
+.links-wrapper
+  max-width: 800px
+  margin: auto
+  display: flex
 </style>
 

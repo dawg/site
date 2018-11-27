@@ -1,7 +1,4 @@
-$accentColor = #1976D2
-$textColor = #282c34
-$borderColor = #454856
-$codeBgColor = #282c34
+@import 'theme.styl'
 
 .hero, .navbar .site-name, .navbar .nav-link, .search-box input
   color: #eaecef!important
@@ -15,7 +12,7 @@ $codeBgColor = #282c34
 .footer
   border-top: 1px solid #ddd!important;
 
-.links, .navbar
+.navbar, .navbar .links
   background-color: #21242B!important
 
 .features, .footer
@@ -31,19 +28,7 @@ $codeBgColor = #282c34
   border-radius: 10px
   padding: 0 15px
   position: relative
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-  transition: all 0.3s ease-in-out;
   margin: 0 10px
-  max-width: 25%!important;
-
-  &:hover
-    transform: scale(1.05, 1.05);
-    // box-shadow: 0px 0px 38px 13px rgba(0,0,0,0.15);
-    // transition: box-shadow 0.2s ease-in-out;
-
-  &:hover::after
-    opacity: 1;
-
 
 .feature::after
   content: '';
