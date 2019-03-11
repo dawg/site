@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'DAWG',
+  title: 'VUSIC',
   description: "A modern Digital Audio Workstation",
   themeConfig: {
     nav: [
@@ -11,7 +11,8 @@ module.exports = {
         collapsable: false,
         children: [
           '/guide/',
-          '/guide/installation'
+          '/guide/installation',
+          '/guide/user_guide'
         ]
       }
     ]

@@ -2,13 +2,15 @@
 <template>
   <div class="home">
     <div class="hero">
-      <div class="logo-wrapper">
-        <img
-          v-if="data.heroImage"
-          class="logo"
-          :src="$withBase(data.heroImage)"
-          alt="hero"
-        >
+      <div class="logo-wrapper grid-parent">
+        <visualization>
+          <img
+            v-if="data.heroImage"
+            class="logo"
+            :src="$withBase(data.heroImage)"
+            alt="hero"
+          >
+        </visualization>
       </div>
 
       <h1 class="title">{{ data.heroText || $title || 'Hello' }}</h1>
@@ -61,9 +63,10 @@
             :key="set.name"
             class="link"
           >
+            <!-- TODO Remove the link.link ? when we have downloads for everything -->
             <a 
               :href="link.link"
-              target="__blank"
+              :target="link.link ? '__blank' : undefined"
             >
               {{ link.name }}
             </a>
@@ -76,60 +79,79 @@
 
 <script>
 import Home from '@default-theme/Home.vue'
+import Visualization from './Visualization.vue';
+
+// const os = 'Unknown';
+// if (navigator.appVersion.indexOf('Win') !== -1) OSName="Windows";
+// if (navigator.appVersion.indexOf('Mac') !== -1) OSName="MacOS";
+// if (navigator.appVersion.indexOf('X11') !== -1) OSName="UNIX";
+// if (navigator.appVersion.indexOf('Linux') !== -1) OSName="Linux";
 
 export default {
   extends: Home,
-  data: () => ({
-    linkSets: [
-      {
-        title: 'Socials',
-        links: [
-          {
-            name: 'GitHub',
-            link: 'https://github.com/dawg/vusic',
-          },
-          {
-            name: 'Facebook',
-            link: 'https://github.com/dawg/vusic',
-          }
-        ]  
-      },
-      {
-        title: 'Feedback',
-        links: [
-          {
-            name: 'Feature Request',
-            link: 'https://github.com/dawg/vusic/issues/new',
-          },
-          {
-            name: 'Bug Report',
-            link: 'https://github.com/dawg/vusic/issues/new',
-          }
-        ]  
-      },
-      {
-        title: 'Download',
-        links: [
-          {
-            name: 'Windows',
-            link: '',
-          },
-          {
-            name: 'macOS',
-            link: '',
-          },
-          {
-            name: 'Linux',
-            link: '',
-          }
-        ]
-      }
-    ]
-  })
+  components: { Visualization },
+  computed: {
+    linkSets() {
+      return [
+        {
+          title: 'Socials',
+          links: [
+            {
+              name: 'GitHub',
+              link: 'https://github.com/dawg/vusic',
+            },
+            {
+              name: 'Facebook',
+              link: 'https://github.com/dawg/vusic',
+            }
+          ]  
+        },
+        {
+          title: 'Feedback',
+          links: [
+            {
+              name: 'Feature Request',
+              link: 'https://github.com/dawg/vusic/issues/new',
+            },
+            {
+              name: 'Bug Report',
+              link: 'https://github.com/dawg/vusic/issues/new',
+            }
+          ]  
+        },
+        {
+          title: 'Download',
+          links: [
+            {
+              name: 'Windows',
+              link: '',
+            },
+            {
+              name: 'macOS',
+              link: '',
+            },
+            {
+              name: 'Linux',
+              link: this.$withBase('/vusic.AppImage'),
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style scoped>
+.grid-parent {
+  display: grid;
+}
+
+.grid-child {
+  grid-row: 1;
+  grid-column: 1;
+}
+
 .home {
   padding: 3.6rem 0 0!important;
   max-width: unset;
@@ -153,35 +175,16 @@ export default {
 }
 
 .logo-wrapper {
-  padding: 60px;
-  border: 1px solid white;
-  border-radius: 50%;
-  max-width: 200px;
-  max-height: 200px;
-  margin: 3em 0 1em 0;
-	animation: animShadow 2s infinite ease;
+  margin: 100px 50px;
 }
 
 .logo {
   filter: invert(100%);
   max-height: 150px!important;
-  margin: 1.5em!important;
 }
 
 .feature {
   height: 230px;
-}
-
-@keyframes animShadow {
-	0% { width: 100%; left: 0;  top: 0;  opacity: 1;  box-shadow: 0 0 85px rgba( 170, 170, 255, .4  ); }
-  4% { width: 100%; left: 0;  top: 0;  opacity: 1;  box-shadow: 0 0 85px rgba( 170, 170, 255, .4  ); }
-  10% { width:  96%; left: 2%; top: 2%; opacity: .7; box-shadow: 0 0 50px rgba( 170, 170, 255, .2  ); }
-	25% { width: 100%; left: 0;  top: 0;  opacity: .5;  box-shadow: 0 0 85px rgba( 170, 170, 255, .1  ); }
-	50% { width:  96%; left: 2%; top: 2%; opacity: .5; box-shadow: 0 0 50px rgba( 170, 170, 255, .1  ); }
-	/* 14% { width:  98%; left: 1%; top: 1%; opacity: 1;  box-shadow: 0 0 70px rgba( 170, 170, 255, .27 ); } */
-	/* 18% { width:  98%; left: 1%; top: 1%; opacity: 1;  box-shadow: 0 0 70px rgba( 170, 170, 255, .27 ); } */
-	90% { width:  96%; left: 2%; top: 2%; opacity: .5; box-shadow: 0 0 60px rgba( 170, 170, 255, .1 ); }
-	100% { width:  96%; left: 2%; top: 2%; opacity: .5; box-shadow: 0 0 20px rgba( 170, 170, 255, .3  ); }
 }
 
 .title, .description, .action-button {
