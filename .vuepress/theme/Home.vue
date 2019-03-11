@@ -103,6 +103,10 @@ export default {
             {
               name: 'Facebook',
               link: 'https://github.com/dawg/vusic',
+            },
+            {
+              name: 'Youtube',
+              link: 'https://www.youtube.com/channel/UCYyTUgQoOADVsn6YLHP6kqA'
             }
           ]  
         },
