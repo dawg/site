@@ -120,6 +120,10 @@ export default {
             {
               name: 'Bug Report',
               link: 'https://github.com/dawg/vusic/issues/new',
+            },
+            {
+              name: 'Contact Us',
+              link: 'https://goo.gl/forms/GGCyGyheN8ZuQM6x2',
             }
           ]  
         },

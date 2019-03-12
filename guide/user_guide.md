@@ -167,3 +167,12 @@ Simply choose the project you wish to restore and Vusic will handle the rest.
 ::: warning
 Make sure to save your project before opening a project from the cloud.
 :::
+
+## Machine Learning Models
+`Vusic` is taking full advantage of recent advances in machine learning technology by embedding Vocal Separation and Automatic Piano Transcription models. The Vocal Separation model separates vocals from a complete song into a new track. The Automatic Piano Transcription model transcribes a piano track to a MIDI file. Both models output their result to the project resources.
+
+### Vocal Separation
+To separate the vocals from a full track, simply drag a complete song from the File Explorer to the `Sample Tab` and click `Separate Vocals`. This component is only compatible with `.wav` file formats.
+
+### Automatic Piano Transcription
+To separate the vocals from a full track, simply drag a complete song from the File Explorer to the `Sample Tab` and click `Transcribe`. This component is only compatible with `.wav` file formats and is limited to piano tracks.
