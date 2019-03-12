@@ -4,61 +4,165 @@ Once you have Vusic installed on your machine, the next step is to open and save
 
 ![Empty Application](https://i.ibb.co/f046PNm/Screenshot-from-2019-03-10-18-39-44.png)
 
-## Saving the Project
+## Basics
+### Command Palette
+The `Command Palette` is a core aspect of Vusic's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. This feature aims to list all actions that are currently available to the you given your current context.
+
+![Command Palette](https://i.ibb.co/hCP6W4C/palette.png)
+
+### Keyboard Shortcuts
+Vusic features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will located on the right-hand side of the action item.
+
+In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. Vusic aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
+
+### Layout
+- **Toolbar** - The toolbar is located at the top of the screen and contains project settings, the current playback time, and the play/pause buttons.
+- **Activity Bar** - The activity bar is located in the far left-hand side of the application and contains tab icons. Clicking icons changes the view in the **Side Bar**.
+- **Side Bar** - Contains different views that are selected by the **Activity Bar**.
+- **Panels** - Contains different panels that can be changed using the panel headers.
+- **Status Bar** - The status bar contains relevant information such as the currently opened project and the [Cloud Backup](#cloud-backup) status.
+
+
+### Project Settings
+Project settings are located in two locations, the toolbar and from a popup located in the **Activity Bar**. Click the settings icon in the activity bar to activate the popup. Currently, the only configurable settings are:
+
+- **BPM** - The [beats per minute](https://en.wikipedia.org/wiki/BPM_(Beats_per_Minute)) of the project.
+- **Name** - The project name. This is used for cloud backup.
+- **Backup** - Whether to push changes to the cloud. See the [cloud backup](#cloud-backup) section for more information.
+
+### Workspace Folders
+Adding folders to a workspace is an essential step during the setup process. This will enable you to import and use `WAV` files within the project. If you haven't added any folders yet, you will immediately see the `Open Folder` button when you open the project. Since you can add more than one folder to your workspace, navigate to `File` > `Add Folder to Workspace` to add more folders. These folders will be persisted across projects as they are common to a computer rather than a project.
+
+Currently, we only support `WAV` files as they were the easiest to implement. We plan to add support for `mp3` files and others as soon as we get a chance. Until then, your best option is to use an online converter (such as [online-audio-converter](https://online-audio-converter.com/)) to convert your audio files into the appropriate format.
+
+### Contexts
+When you press the play button, you could either play the contents of the [Playlist](#playlist) or the currently selected [Pattern](#patterns). The context, either `Playlist` or `Pattern`, specifies which item you actually wish to play. To change this, use the two rectangles on the far right-hand side of the toolbar. If you find yourself switching contexts fairly often, make sure to use the keyboard shortcut.
+
+## Project Files
+### Saving the Project
 Vusic saves the project file to the file system with a `.dg` extension. This enables us to correctly identify project files; however, they are really just `JSON` files in disguise. If you know what you're doing, feel free to open up and modify them in a text editor. Beware of modifying the file's contents though as it will not open correctly if not properly formatted.
 
 To save a project, navigate to `File` > `Save`. This will open up your operating systems file dialog where you will be able to specify a location to save the current project file. When naming the file, if a `.dg` extension is not provided, it is automatically appended before saving. After choosing the path, every time you press `Save` the project will be automatically saved. To force the application to save to a new file location, use the `File` > `Save As` command.
 
-## Opening a Folder
+### Opening a Project
 Similar to the restrictions on saving a file, we will only let you open up a folder that has a `.dg` extension. Navigate to `File` > `Open` to open up the file dialog. After choosing a new file, Vusic will reload and open your new project.
 
-## Command Palette
-The command palette is a core aspect of Vusic's navigation system. This feature aims to list all actions that are currently available to the you. By doing so, ...... to reduce interaction with the mouse by completely removing the need to re
+## Audio Files
+Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, Vusic checks to see if you've already imported the audio file and adds it to he project if not. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
 
-## Keyboard Shortcuts
-Vusic features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the `Command Palette` using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will located on the right-hand side of the action item.
-
-In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. Vusic aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
-
-## Undo/Redo
-Due to time constraints, we do not support undoing and redoing operations. This feature is one of our top priorities. Ideally, vusic will support unlimited undo/redo functionality and will use common keyboard shortcuts (ie. `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z`).
-
-## Project Folders
-Adding folders to a workspace is an essential step during the setup process. This will enable you to import and use `WAV` files within the project. If you haven't added any folders yet, you will immediately see the `Open Folder` when you open the project. Since you can add more than one folder to your workspace, navigate to `File` > `Add Folder to Workspace` to add more folders. These folders will be persisted across projects as they are common to a computer rather than a project.
-
-Currently, we only support `WAV` files as they were the easiest to implement. We plan to add support for `mp3` files and others as soon as we get a chance. Until then, your best option is to use an online converter to convert your audio files into the appropriate format.
+Audio files are uniquely identified by their path. This means that changing the location of audio files will cause errors in your project and that projects are not very portable from one computer to another. Better methods to uniquely identify audio files are being researched and will be implemented as soon as possible. When implemented, projects will be able to recover missing audio files using these unique identifiers.
 
 ## Patterns
-`Patterns` store sequence information that can started/stopped as a single unit and scheduled in the `Playlist` at one or more locations. Each `Pattern` contains score information for each `Instrument`. To create a pattern, select the `Patterns` tab within the `Activity Bar` and click the `Add Pattern` button. This will create a new `Pattern` with a unique name and add it to the `Pattern` list. By default, the first `Pattern` that you create will be selected. Once you create another `Pattern`, simply click on the `Pattern` you wish to select. By selecting a `Pattern`, you change which is previewed when you press play and which scores are displayed in the `Piano Roll`.
+`Patterns` store sequence information that can started/stopped as a single unit and scheduled in the [Playlist](#playlists) at one or more locations. Each `Pattern` contains score information for each [Instrument](#instruments). To create a pattern, select the `Patterns` tab within the `Activity Bar` and click the `Add Pattern` button. This will create a new `Pattern` with a unique name and add it to the `Pattern` list. By default, the first `Pattern` that you create will be selected. Once you create another `Pattern`, simply click on the `Pattern` you wish to select. By selecting a `Pattern`, you change which is previewed when you press play and which scores are displayed in the [Piano Roll](#piano-roll).
 
 ![Pattern](https://i.ibb.co/CMMNqTH/Screenshot-from-2sadf019-03-10-20-46-34.jpg)
 > Two instruments that each contain a score that was created using the `Piano Roll`. Both of these scores are stored within a `Pattern`.
 
 ## Piano Roll
-The `Piano Roll` allows you to sequence a notes (aka a score) for a specific `Instrument`. Each score is associated with exactly one `Instrument` and belongs to exactly one `Pattern`. To start a score, make sure you have a `Pattern` selected, then right-click an `Instrument` and click `Open in Piano Roll`. If you open up another score in the `Piano Roll`, just use the same instructions to open the score back up.
-
-### Scheduling Notes
-Now that you've opened an instrument in the `Piano Roll`, you can create a score. To add a note, just click anywhere in the sequencer. The layout should be intuitive if you've ever used  a DAW before. Each row represents a note and each column represents a location in time. Each column, divided by least thick line, represents `1/4th` of a beat. The medium line thickness represents the start/end of a beat and the thickest line represents the start/end of a bar. 
-
-### Changing Length of Notes
-To change the length of a note, hover your mouse ever the right-hand side of a note until you see the arrow with two heads. Press down on you mouse and drag horizontally until the desired length is obtained.
-
-### Grid Snapping
-Currently, notes are snapped to the grid at every `1/4` beat. This means that when you try and schedule a note or when you change the duration of a note, you can only do so in `1/4` beat increments. An adjustable snapping mechanism is currently in the development process and should be available soon.
-
-### Previewing & Looping
-To preview your creation, make sure you are in the `Piano Roll` [context](#contexts) and press play. This will play all of the elements in your sequence before starting over at the beginning.
+The `Piano Roll` allows you to sequence a notes (aka a score) for a specific [Instrument](#instruments). Each score is associated with exactly one [Instrument](#instruments) and belongs to exactly one `Pattern`. To start a score, make sure you have a `Pattern` selected, then right-click an `Instrument` and click `Open in Piano Roll`. If you open up another score in the `Piano Roll`, just use the same instructions to open the score back up. See the [Sequencer](#sequencer) section to learn how to sequence notes.
 
 ![Piano Roll](https://i.ibb.co/bQD3Rph/Screenshot-from-2019-03-10-21-01-39.png)
+> A `Piano Roll` with a basic sequence of notes.
 
-> Scores is a generic term that is commonly used for sheet music. Although the `Piano Roll` does not create sheet music, we have adapted the term to suit our needs. [See here](https://en.wikipedia.org/wiki/Sheet_music) for more information about the relationship between sheet music and scores.
+::: tip Info
+**Scores** is a generic term that is commonly used for sheet music. Although the `Piano Roll` does not actually create sheet music, we have adapted the term to suit our needs. [See here](https://en.wikipedia.org/wiki/Sheet_music) for more information about the relationship between sheet music and scores.
+:::
 
-## Contexts
-When you press the play button, you could either play the contents of the `Playlist` or the currently selected `Pattern`. The context, either `Playlist` or `Pattern`, specifies which item you actually wish to play. To change this, use the two rectangles on the far right-hand side of the toolbar. If you find yourself switching contexts fairly often, make sure to use the keyboard shortcut.
+## Sequencer
+Sequencing, also know as scheduling events to occur at a particular time, is an essential aspect of music production. For example, you may want to sequence a melody, a chord progression, or a set of audio samples. The `Sequencer` component, used by both the [Playlist](#playlist) and [Piano Roll](#piano-roll), manages all sequencing that occurs within Vusic. Although the types of elements that each `Sequencer` is able to sequence may differ, the available tools at your disposal remain almost identical.
+
+The layout should feel intuitive if you've ever used a DAW before. Depending on the type of `Sequencer`, each row represents something different (ex. each row in the [Piano Roll](#piano-roll) represents a different note); however, every column represents a location in time, regardless of the exact implementation. Each column, divided by least thick line, represents `1/4th` of a beat. The medium line thickness represents the start/end of a beat and the thickest line represents the start/end of a bar/measure. 
+
+### Scheduling Elements
+To add an element, just click anywhere within the `Sequencer`. Depending on the type of `Sequencer`, this may or may not work. For example, with a [Piano Roll](#piano-roll), the only type of element is a note. Therefore, when you click within a `Piano Roll`, a note will always appear. In contrast, in `Sequencers` such as the [Playlist](#playlist), no default is provided. For such systems, you must add an element first before another can be created by clicking. Refer to the specific document for more information about adding the initial item.
+
+
+### Removing Elements
+To delete a scheduled element, right-click on the element you wish to remove. It is also possible to remove more than one element at once (see [Batch Operations](#batch-operations)).
+
+### Copying an Element
+To copy an element, just click on it. Afterwards, anytime you click within the `Sequencer` a copy will appear. Another way to copy an element is by holding `Shift`, pressing down on the element you wish to clone, and dragging to the desired location.
+
+### Changing Element Duration
+To change the length of an element, hover your mouse ever the right-hand side of an element until you see the two-sided horizontal arrow. Press down on you mouse and drag horizontally until the desired length is obtained.
+
+### Batch Operations
+Sequencing elements can easily become a tedious. To avoid this problem, moving, copying, and changing the duration of an element can all be batched by first selecting a group of elements and then applying the desired operation to a single element. For example, if you wished to move all of the notes in the `Piano Roll` to a new octave, you first could select all of the notes and then drag one of the notes to the desired octave. To select a group of elements, press down within the `Sequencer` (not on an element) and drag your mouse such that the desired elements are selected. Furthermore, it is possible to delete selected elements using the `Del` key.
+
+### Grid Snapping
+Currently, elements are snapped to the grid at every `1/4` beat. This means that when you try and schedule an element or when you change the duration of a note, you can only do so in `1/4` beat increments. An adjustable snapping mechanism is currently in the development process and should be available soon. This feature will allow you to change the snap value to values such as `1/2`, `1/8`, `1/16`, etc.
+
+### Seeking a Position
+To seek a particular time in the `Sequencer`, click a position on the timeline. The timeline cursor will automatically seek that position, even if it is currently in its playback state and will restart playback from the chosen position.
+
+![Timeline](https://i.ibb.co/4ppkm7X/Screenshot-from-2019-03-11-15-53-52.png)
+> An view of the first 9 timeline bars. The timeline cursor is currently at time `0` (the start of beat `1`).
+
+### Previewing & Looping
+To preview your creation, make sure you are in the correct [context](#contexts) and press play. This will play all of the elements in your sequence before starting over at the beginning. If you wish to loop a section of the sequence, press down on the start position (or end position) on the `Timeline` and drag your mouse to end position (or start position). The loop start and end can be altered by pressing down on the end you wish to change and dragging to the desired position. To remove the loop, simply double-click anywhere on the timeline.
+
+![Looping](https://i.ibb.co/Y2SLM50/looping.png)
+> An image of the [Piano Roll](#piano-roll) with a loop set up between the `3rd` and `7th` bars.
+
+## Mixer
+The mixer allows you to add different [Effects](#effects) to instruments. Currently, there are ten different channels available to be used. Each channel takes in a number of inputs and produces the same number of outputs. Each channel can have up to ten [Effects](#effects) which are applied in the order they appear in the channel (top to bottom). After
+
+![Mixer](https://i.ibb.co/sjqZfns/Screenshot-from-2019-03-11-17-56-45.png)
+> `Channel 0` has one effect in the third slot. The settings are being displayed on the right-hand side.
+
+## Effects
+Effects are software or hardware elements that manipulate an audio signal in some way. See [here](https://blog.landr.com/audio-effects-plugins-guide/) for a more detailed overview and some examples. Effects are inserted into channels within the [Mixer](#mixer) and manipulate the instruments that are routed to that particular channel. Vusic currently features the following effects:
+
+- Wah
+- Reverb
+- Phaser
+- Bit Crusher
+- Ping Pong Delay
+- Compressor
+- EQ3
+- Limiter
+- Chorus
+- Tremolo
+- Distortion
+
+## Instruments
+Instruments are used as a starting point for different sounds. To create a new instrument, navigate to the `Instruments` panel and click the `Add Instrument` button. This will find a unique name and append a new synthesizer to the instrument list. Using the controls, you can mute the instrument, adjust its gain and panning values, and assign the instrument to a channel (see [Mixer](#mixer)). To change the oscillator, double-click anywhere on the instrument. This will expand the area and display a dropdown where you will be able to select a new oscillator type. Double-click again to close the expanded area.
+
+Currently, we only support our integrated synthesizers and do support other sources such as SoundFonts and VSTs (see [here](/guide/troubleshooting.html#does-vusic-support-vsts) for more information).
 
 ## Playlist
-`Playlist` are a core feature of Vusic's audio system. Similar to FL Studio, a playlist is 
+`Playlist` are a core feature of Vusic's audio system. Similar to FL Studio, the playlist represents the overall composition and may contain [Automation Clips](#automation-clips), [Audio Files](#audio-files), and [Patterns](#patterns). To learn more about sequencing elements in the `Playlist`, visit the [Sequencer](#sequencer) section.
 
+### Adding Elements
+[Audio Files](#audio-files) and [Patterns](#patterns) are added to the `Playlist` through a drag-and-drop mechanism. Open up either of the `Audio Files` or `Patterns` tabs and drag the [Audio File](#audio-files) or [Pattern](#patterns) the desired location within the `Playlist`. See the [Automation Clip](#automation-clips) section to learn how to add [Automation Clips](#automation-clips) to the `Playlist`.
 
-## TODO
-- Create common section to show to to work with the sequencer.
+## Automation Clips
+Automation clips allow you to automate parameters found within Vusic's interface. When `VST` support is added (see [here](/guide/troubleshooting.html#does-vusic-support-vsts)), you will also be able to automate any parameter found within third-party synthesizers or effects. To automate a value, right click on the item you would like to automate and select `Create Automation Clip`. Vusic will find the first available track in the [Playlist](#playlist) and create a new `Automation Clip`. If the loop start and end bounds are set within the `Sequencer`, the `Automation Clip` will respect those bounds when created.
+
+![Automation Clip](https://i.ibb.co/xzWmjp0/automation.png)
+> An automation clip for the instrument volume.
+
+### Modifying Values
+A newly created `Automation Clip` will have two values by default, one at the start and one at the end. Click and drag on points to change their value or location To add a new point, simply click anywhere within the element. Once created, these points can be dragged like any other. Right-click on any point and select `Delete` to remove the point.
+
+### Limitations
+Currently, it is only possible to automate [Instrument](#instruments) and [Mixer](#mixer) parameters. Support for effect automation is in progress.
+
+## Cloud Backup
+Cloud integration is one of the features that sets Vusic apart from other workstations. Currently, only basic cloud backup is supported; however, but we have big plans for the future.
+
+### Backing Up Your Project
+To initiate the backup mechanism, open up the settings popup and toggle `Cloud Backup`. If this setting is disabled, make sure that the `Project Name` field is not empty. Once this is activated, anytime you save the project, a copy will be pushed to a cloud database. We currently use Google's `Firebase` for fast, reliable, and secure storage. Beware, there is currently not authentication system so your project file will be visible to everyone if synced to the cloud.
+
+Once activated, you will see the status of the backup in the [Status Bar](#layout).
+
+### Restoring Your Project
+To restore a project that is stored in the cloud, to go `File` > `Open From Backup`. A modal will appear that will list all of the available projects.
+
+![Projects Modal](https://i.ibb.co/3d0rNMF/backups.png)
+
+Simply choose the project you wish to restore and Vusic will handle the rest.
+
+::: warning
+Make sure to save your project before opening a project from the cloud.
+:::

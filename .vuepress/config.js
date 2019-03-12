@@ -12,7 +12,8 @@ module.exports = {
         children: [
           '/guide/',
           '/guide/installation',
-          '/guide/user_guide'
+          '/guide/user_guide',
+          '/guide/troubleshooting',
         ]
       }
     ]

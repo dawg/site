@@ -53,11 +53,36 @@ export default {
 }
 
 .player-controls:hover {
-  transform: scale(1.1);
+  animation: rotate-center 1s cubic-bezier(0.680, -0.550, 0.265, 1.550) ;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+  transform: rotate(360deg);
+  }
 }
 
 .player-controls:hover .play::before {
   box-shadow: 0 0 12px rgba(255, 238, 125, 0.8);
+}
+
+@keyframes scaling {
+  0%,
+  100% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
 }
 
 @keyframes audio1 {
