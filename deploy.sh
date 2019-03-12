@@ -9,9 +9,8 @@ npm run build
 # navigate into the build output directory
 cd .vuepress/dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
+# for the custom domain
+echo dawg.dev > CNAME
 git init
 git add -A
 git commit -m 'deploy'

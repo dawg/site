@@ -1,4 +1,4 @@
-# Installing DAWG
+# Installing Vusic
 <div style="display: flex; justify-content: space-around">
   <dg-button :href="$withBase('/vusic.AppImage')">
     <download-icon/>
@@ -21,7 +21,7 @@
 Downloading and installing `Vusic` should only take a few minutes. It is a fairly small file (compared to other DAWs) sitting at a mere `93.2 MB`.
 
 ::: warning
-Building cross-platform is not as easy as it seams. Therefore, we only support Linux at the moment until we can configure our pipelines to build Vusic for `Windows` and `MacOS`.
+Building cross-platform is not as easy as it may seem. Therefore, we only support Linux at the moment until we can configure our pipelines to build `Vusic` for `Windows` and `MacOS`.
 :::
 
 ## System Requirements
