@@ -176,3 +176,5 @@ To separate the vocals from a full track, simply drag a complete song from the F
 
 ### Automatic Piano Transcription
 To separate the vocals from a full track, simply drag a complete song from the File Explorer to the `Sample Tab` and click `Transcribe`. This component is only compatible with `.wav` file formats and is limited to piano tracks.
+
+<img-modal src = "https://i.ibb.co/fGRVy8d/Sample-Tab.png" alt = "Sample Tab"></img-modal>
