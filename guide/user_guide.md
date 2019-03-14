@@ -45,7 +45,7 @@ To save a project, navigate to `File` > `Save`. This will open up your operating
 Similar to the restrictions on saving a file, we will only let you open up a folder that has a `.dg` extension. Navigate to `File` > `Open` to open up the file dialog. After choosing a new file, `Vusic` will reload and open your new project.
 
 ## Audio Files
-Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, `Vusic` checks to see if you've already imported the audio file and adds it to he project if you haven't. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
+Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, `Vusic` checks to see if you've already imported the audio file and adds it to the project if you haven't. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
 
 Audio files are uniquely identified by their path. This means that changing the location of audio files will cause errors in your project. Consequently, moving a project from one computer to another is not very well supported. Better methods to uniquely identify audio files are being researched and will be implemented as soon as possible. When implemented, projects will be able to recover missing audio files using these unique identifiers.
 
@@ -56,13 +56,13 @@ Audio files are uniquely identified by their path. This means that changing the 
 > Two instruments that each contain a score that was created using the `Piano Roll`. Both of these scores are stored within a `Pattern`.
 
 ## Piano Roll
-The `Piano Roll` allows you to sequence notes (aka a score) for a specific [Instrument](#instruments). Each score is associated with exactly one [Instrument](#instruments) and belongs to exactly one `Pattern`. To start a score, make sure you have a `Pattern` selected, then right-click an `Instrument` and click `Open in Piano Roll`.To return to a score, just use the same commands as above. See the [Sequencer](#sequencer) section to learn how to sequence notes.
+The `Piano Roll` allows you to sequence notes (aka a score) for a specific [Instrument](#instruments). Each score is associated with exactly one [Instrument](#instruments) and belongs to exactly one `Pattern`. To start a score, make sure you have a `Pattern` selected, then right-click an `Instrument` and click `Open in Piano Roll`. To return to a score, just use the same commands as above. See the [Sequencer](#sequencer) section to learn how to sequence notes.
 
 <img-modal src="https://i.ibb.co/bQD3Rph/Screenshot-from-2019-03-10-21-01-39.png" alt="Piano Roll"></img-modal>
 > A `Piano Roll` with a basic sequence of notes.
 
 ::: tip Info
-**Scores** is a generic term that is commonly used for sheet music. Although the `Piano Roll` does not actually create sheet music, we have adapted the term to suit our needs. [See here](https://en.wikipedia.org/wiki/Sheet_music) for more information about the relationship between sheet music and scores.
+**Score** is a generic term that is commonly used for sheet music. Although the `Piano Roll` does not actually create sheet music, we have adopted the term to suit our needs. [See here](https://en.wikipedia.org/wiki/Sheet_music) for more information about the relationship between sheet music and scores.
 :::
 
 ## Sequencer
@@ -77,13 +77,13 @@ To add an element, just click anywhere within the `Sequencer`. Depending on the 
 To delete a scheduled element, right-click on the element you wish to remove. It is also possible to remove more than one element at once using [Batch Operations](#batch-operations).
 
 ### Copying an Element
-To copy an element, just click on it. Afterwards, anytime you click within the `Sequencer` a copy will appear. Another way to copy an element is by holding `Shift`, pressing down on the element you wish to copy, and dragging to the desired location.
+To copy an element, just click on it. Afterward, anytime you click within the `Sequencer` a copy will appear. Another way to copy an element is by holding `Shift`, pressing down on the element you wish to copy, and dragging to the desired location.
 
 ### Changing Element Duration
-To change the length of an element, hover your mouse ever the right-hand side of an element until you see the two-sided horizontal arrow. Press down on you mouse and drag horizontally until the desired length is obtained.
+To change the length of an element, hover your mouse ever the right-hand side of an element until you see the two-sided horizontal arrow. Press down on your mouse and drag horizontally until the desired length is obtained.
 
 ### Batch Operations
-Sequencing elements can easily become a tedious. To avoid this problem, moving, copying, and changing the duration of an element can all be batched by first selecting a group of elements and then applying the desired operation to a single element. For example, if you want to move all of the notes in the `Piano Roll` to a new octave, you could select all of the notes using the selection tool and then drag one of the notes to the desired octave. Since all of the notes are selected, they will all move in unison. To select a group of elements, press down within the `Sequencer` (not on an element) and drag your mouse such that the desired elements are selected. Furthermore, it is possible to delete selected elements using the `Del` key.
+Sequencing elements can easily become tedious. To avoid this problem, moving, copying, and changing the duration of an element can all be batched by first selecting a group of elements and then applying the desired operation to a single element. For example, if you want to move all of the notes in the `Piano Roll` to a new octave, you could select all of the notes using the selection tool and then drag one of the notes to the desired octave. Since all of the notes are selected, they will all move in unison. To select a group of elements, press down within the `Sequencer` (not on an element) and drag your mouse such that the desired elements are selected. Furthermore, it is possible to delete selected elements using the `Del` key.
 
 ### Grid Snapping
 Currently, elements are snapped to the grid at every `1/4` beat. This means that when you try to schedule an element or when you try to change the duration of a note, you can only do so in `1/4` beat increments. An adjustable snapping mechanism is currently in the development process and should be available soon. This feature will allow you to change the snap value to values such as `1/2`, `1/8`, `1/16`, etc.
@@ -92,7 +92,7 @@ Currently, elements are snapped to the grid at every `1/4` beat. This means that
 To seek a particular time in the `Sequencer`, click a position on the timeline. The timeline cursor will automatically seek that position, even if it is currently in its playback state and will restart playback from the chosen position.
 
 <img-modal src="https://i.ibb.co/4ppkm7X/Screenshot-from-2019-03-11-15-53-52.png" alt="Timeline"></img-modal>
-> An view of the first 9 timeline bars. The timeline cursor is currently at time `0` (the start of beat `1`).
+> A view of the first 9 timeline bars. The timeline cursor is currently at time `0` (the start of beat `1`).
 
 ### Previewing & Looping
 To preview your creation, make sure you are in the correct [context](#contexts) and press play. This will play all of the elements in your sequence before starting over at the beginning. If you wish to loop a section of the sequence, press down on the start position (or end position) on the timeline and drag your mouse to end position (or start position). The loop start and end can be altered by pressing down on the end you wish to change and dragging to the desired position. To remove the loop, simply double-click anywhere within the timeline.
@@ -132,7 +132,7 @@ Instruments are used as a starting point for different sounds. To create a new i
 Currently, we only support our integrated synthesizers and do support other sources such as SoundFonts and VSTs (see [here](/guide/troubleshooting.html#does-vusic-support-vsts) for more information).
 
 ## Playlist
-`Playlist` are a core feature of Vusic's audio system. Similar to FL Studio, the playlist represents the overall composition and may contain [Automation Clips](#automation-clips), [Audio Files](#audio-files), and [Patterns](#patterns). To learn more about sequencing elements in the `Playlist`, visit the [Sequencer](#sequencer) section.
+`Playlists` are a core feature of Vusic's audio system. Similar to FL Studio, the playlist represents the overall composition and may contain [Automation Clips](#automation-clips), [Audio Files](#audio-files), and [Patterns](#patterns). To learn more about sequencing elements in the `Playlist`, visit the [Sequencer](#sequencer) section.
 
 ### Adding Elements
 [Audio Files](#audio-files) and [Patterns](#patterns) are added to the `Playlist` through a drag-and-drop mechanism. Open up either of the `Audio Files` or `Patterns` tabs and drag the [Audio File](#audio-files) or [Pattern](#patterns) the desired location within the `Playlist`. See the [Automation Clip](#automation-clips) section to learn how to add [Automation Clips](#automation-clips) to the `Playlist`.
@@ -150,10 +150,10 @@ A newly created `Automation Clip` will have two values by default, one at the st
 Currently, it is only possible to automate [Instrument](#instruments) and [Mixer](#mixer) parameters. Support for effect automation is in progress.
 
 ## Cloud Backup
-Cloud integration is one of the features that sets Vusic apart from other workstations. Currently, only basic cloud backup is supported; however, but we have big plans for the future.
+Cloud integration is one of the features that sets Vusic apart from other workstations. Currently, only basic cloud backup is supported; however, we have big plans for the future.
 
 ### Backing Up Your Project
-To initiate the backup mechanism, open up the settings popup and toggle `Cloud Backup`. If this setting is disabled, make sure that the `Project Name` field is not empty. Once this is activated, anytime you save the project, a copy will be pushed to a cloud database. We currently use Google's `Firebase` for fast, reliable, and secure storage. Beware, there is currently not authentication system so your project file will be visible to everyone if synced to the cloud.
+To initiate the backup mechanism, open up the settings popup and toggle `Cloud Backup`. If this setting is disabled, make sure that the `Project Name` field is not empty. Once this is activated, anytime you save the project, a copy will be pushed to a cloud database. We currently use Google's `Firebase` for fast, reliable, and secure storage. Beware, there is currently no authentication system so your project file will be visible to everyone if synced to the cloud.
 
 Once activated, you will see the status of the backup in the [Status Bar](#layout).
 

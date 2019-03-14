@@ -22,7 +22,7 @@ Currently, we only support `WAV` files as they were the easiest to implement. We
 It is not currently possible to route an audio sample to a mixer channel. This feature is currently in development and will be available soon.
 
 ## How Do I Change The BPM?
-It is not currently possible to alter the BPM of a project. A solution for this issue will be provided soon.
+It is not currently possible to alter the BPM of a project. A solution to this issue will be provided soon.
 
 ## How Do I Export A Project?
 It is not currently possible to export a project into an audio file. Due to time constraints, this feature has not yet been implemented; however, it should not be long before a solution is provided.
@@ -31,7 +31,7 @@ It is not currently possible to export a project into an audio file. Due to time
 Due to time constraints, we do not support undoing and redoing operations. This feature is one of our top priorities. Ideally, `Vusic` will support unlimited undo/redo functionality and will use the standard keyboard shortcuts (ie. `Ctrl+Z`, `Ctrl+Y`, and `Ctrl+Shift+Z`).
 
 ## Can I Change The Default Theme?
-`Vusic` color palette was built with customizability in mind. Although changing the theme is not currently possible, it shouldn't be too much longer until it this feature is implemented.
+`Vusic` color palette was built with customizability in mind. Although changing the theme is not currently possible, it shouldn't be too much longer until this feature is implemented.
 
 ## Does Vusic Support VSTs?
 `Vusic` does not currently support VST plugins for synthesizers or effects. We run on [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (the same thing that runs in the browser) and do not use the industry standard technology (ie. [C++](https://en.wikipedia.org/wiki/C%2B%2B)).
@@ -41,4 +41,4 @@ There is currently no way to import existing `VSTs` into the workstation; howeve
 ## I Received An Unknown Error
 `Vusic` is a stateful application that could very easily enter a weird state. Given that `Vusic` is still a work in progress, this is even more likely. If you receive an unexpected error, the best solution is to reload the application. Go to `View` > `Reload` or use the keyboard shortcut (defaults to `Ctrl+R`). If you can, make sure to save your work before exiting.
 
-We are also in the progress of creating an error reporting mechanism that will automatically send reports to us in the event of that an unexpected arises. Until then, [submit an issue on GitHub](https://github.com/dawg/vusic/issues) or use our current error reporting system in [Feature Requests & Bug Reporting](/guide#feature-requests-&-error-reporting) if you do not have a GitHub account.
+We are also in the progress of creating an error reporting mechanism that will automatically send reports to us in the event that an unexpected arises. Until then, [submit an issue on GitHub](https://github.com/dawg/vusic/issues) or use our current error reporting system in [Feature Requests & Bug Reporting](/guide#feature-requests-&-error-reporting) if you do not have a GitHub account.
