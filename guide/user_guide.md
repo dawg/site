@@ -6,12 +6,12 @@ Once you have `Vusic` installed on your machine, the next step is to open the so
 
 ## Basics
 ### Command Palette
-The `Command Palette` is a core aspect of Vusic's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to the you given your current context.
+The `Command Palette` is a core aspect of Vusic's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to you given your current context.
 
 <img-modal src="https://i.ibb.co/hCP6W4C/palette.png" alt="Command Palette"></img-modal>
 
 ### Keyboard Shortcuts
-Vusic features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will located on the right-hand side of the command.
+Vusic features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will be located on the right-hand side of the command.
 
 In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. `Vusic` aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
 
