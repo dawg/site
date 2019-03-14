@@ -25,5 +25,5 @@ Building cross-platform is not as easy as it may seem. Therefore, we only suppor
 :::
 
 ## System Requirements
-`Vusic` is lightweight and should run on most available hardware and platform versions. Since we are running `Google Chrome` behind the hood, you can reference their [system requirements page](https://support.google.com/chrome/a/answer/7100626?hl=en) for accurate information.
+`Vusic` is lightweight and should run on most available hardware and platform versions. Since we are running `Google Chrome` under the hood, you can reference their [system requirements page](https://support.google.com/chrome/a/answer/7100626?hl=en) for accurate information.
 
