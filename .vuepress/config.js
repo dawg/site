@@ -1,6 +1,6 @@
 module.exports = {
   title: 'VUSIC',
-  description: "A modern Digital Audio Workstation",
+  description: "A Modern Digital Audio Workstation",
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },

@@ -37,3 +37,6 @@ This will automatically add a new card to the `Feature Requests` list. If approp
 - Attachments in the email will be added to the card.
 - Labels (Optional): In the subject, add #labelname, #labelcolor, or #labelnumber
 ```
+
+### General Inquiries
+To submit a general inquiry, please complete a [Contact Form](https://goo.gl/forms/GGCyGyheN8ZuQM6x2).

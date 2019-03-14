@@ -1,16 +1,14 @@
 ---
 home: true
-actionText: Download DAWG
+actionText: Download Vusic
 actionLink: /guide/installation
 heroImage: /logo.svg
 features:
 - title: Cross Platform
-  details: Developed using web technologies, DAWG supports all major platforms.
+  details: Developed using web technologies, Vusic supports all major platforms.
 - title: Extensible
   details: Plugins and themes allow complete customization of the DAW.
-- title: Real-Time Collaboration
-  details: Real-time collaboration allows you and a collaborator to work simultaneously on the same project.
 - title: Artificial Intelligence
-  details: Using recent advancements in the field of Machine Learning, DAWG offers cutting-edge vocal extraction and piano note transcription.
-footer: © DAWG 2018
+  details: Using recent advancements in the field of Machine Learning, Vusic offers cutting-edge vocal extraction and piano note transcription.
+footer: © DAWG 2019
 ---
