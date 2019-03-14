@@ -202,9 +202,6 @@ export default {
   border: 1px solid white!important;
 }
 
-.links {
-  flex: 1;
-}
 </style>
 
 
@@ -231,8 +228,9 @@ export default {
   padding: 40px 0
 
 .links-wrapper
-  max-width: 800px
   margin: auto
+  flex-wrap: wrap
+  justify-content: space-evenly
   display: flex
 </style>
 
