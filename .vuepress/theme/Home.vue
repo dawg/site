@@ -63,13 +63,19 @@
             :key="set.name"
             class="link"
           >
-            <!-- TODO Remove the link.link ? when we have downloads for everything -->
             <a 
+              v-if="link.link"
               :href="link.link"
-              :target="link.link ? '__blank' : undefined"
+              target="__blank"
             >
               {{ link.name }}
             </a>
+            <div
+              v-else
+              style="color: #b1b1b1"
+            >
+              {{ link.name }}
+            </div>
           </div>
         </div>
       </div>
@@ -115,7 +121,7 @@ export default {
           links: [
             {
               name: 'Feature Request',
-              link: 'https://github.com/dawg/vusic/issues/new',
+              link: '/guide/#feature-requests-bug-reporting',
             },
             {
               name: 'Bug Report',

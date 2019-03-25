@@ -35,6 +35,9 @@ Adding folders to a workspace is an essential step during the setup process. Thi
 ### Contexts
 When you press the play button, you could either play the contents of the [Playlist](#playlist) or the currently selected [Pattern](#patterns). The context, defined as either `Playlist` or `Pattern`, specifies which item you actually wish to play. To change this, use the two rectangles on the far right-hand side of the [Toolbar](#layout). If you find yourself switching contexts fairly often, make sure to use the [Keyboard Shortcut](#keyboard-shortcuts).
 
+## Themes
+`Vusic` comes with several builtin themes. To change your theme, open up the [Command Palette](#command-palette) and select `Change Theme`. As you move with your arrow keys, the themes will preview within the DAW. At the moment, it is not possible to define custom themes.
+
 ## Project Files
 `Vusic` saves the project file to the file system with a `.dg` extension. This enables us to correctly identify project files; however, they are really just `JSON` files in disguise. If you know what you're doing, feel free to open up and modify them in a text editor. Beware of modifying the file's contents though as it will not open correctly if not properly formatted.
 
@@ -99,6 +102,9 @@ To preview your creation, make sure you are in the correct [context](#contexts) 
 
 <img-modal src="https://i.ibb.co/Y2SLM50/looping.png" alt="Looping"></img-modal>
 > An image of the [Piano Roll](#piano-roll) with a loop set between the `3rd` and `7th` bars.
+
+## Resizing
+It is possible to adjust the height and width of the `Sequencer`. To adjust the width, hover over the [Timeline](#timeline), hold `Ctrl` and scroll with your mouse wheel. To adjust the height of the `Sequencer`, hover your mouse over the piano or track list (depending on whether you are using the [Piano Roll](#piano-roll) or [Playlist](#playlist)), hold `Ctrl` and scroll with your mouse wheel. Right now, it is not possible to use a trackpad to adjust these settings; however, that feature is in the backlog.
 
 ## Mixer
 The mixer allows you to add different [Effects](#effects) to instruments. Currently, there are ten different channels available to be used. Each channel takes in a number of inputs and produces the same number of outputs. Each channel can have up to ten [Effects](#effects) which are applied in the order they appear in the channel (top to bottom). Volume, panning, and muting controls are also available at the bottom of the channel.
