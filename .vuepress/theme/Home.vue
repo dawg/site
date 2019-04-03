@@ -138,15 +138,15 @@ export default {
           links: [
             {
               name: 'Windows',
-              link: '',
+              link: 'http://tiny.cc/ur9q4y',
             },
             {
               name: 'macOS',
-              link: '',
+              link: 'http://tiny.cc/p09q4y',
             },
             {
               name: 'Linux',
-              link: this.$withBase('/vusic.AppImage'),
+              link: 'http://tiny.cc/qy9q4y',
             }
           ]
         }
