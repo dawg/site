@@ -1,21 +1,10 @@
 # Installing Vusic
-<div style="display: flex; justify-content: space-around">
-  <dg-button href="http://tiny.cc/qy9q4y">
-    <download-icon/>
-    Linux
-    <small>AppImage</small>
-  </dg-button>
-  <dg-button href="http://tiny.cc/ur9q4y">
-    <download-icon/>
-    Windows
-    <small>exe</small>
-  </dg-button>
-  <dg-button href="http://tiny.cc/p09q4y">
-    <download-icon/>
-    MacOS
-    <small>dmg</small>
-  </dg-button>
-</div>
+<download-button
+  deb="http://tiny.cc/qy9q4y"
+  rpm="http://tiny.cc/sq004y"
+  windows="http://tiny.cc/ur9q4y"
+  macos="http://tiny.cc/p09q4y"
+></download-button>
 
 
 Downloading and installing `Vusic` should only take a few minutes. It is a fairly small file (compared to other DAWs) sitting at less than `100 MB`.
