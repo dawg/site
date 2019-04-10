@@ -5,7 +5,9 @@
     class="button"
     v-bind="$attrs"
   >
-    <slot></slot>
+    <download-icon/>
+    {{ large }}
+    <small>{{ small }}</small>
   </a>
 </template>
 
@@ -14,6 +16,8 @@ export default {
   name: 'DGButton',
   props: {
     disabled: Boolean,
+    large: { type: String, required: true },
+    small: { type: String, required: true },
   },
   computed: {
     style() {

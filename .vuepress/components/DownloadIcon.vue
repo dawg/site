@@ -4,7 +4,7 @@
     src="https://code.visualstudio.com/assets/icons/download.svg"
     width="18px" 
     height="18px" 
-    alt="Linux Download"
+    alt=""
   >
 </template>
 

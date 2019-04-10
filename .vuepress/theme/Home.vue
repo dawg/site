@@ -66,7 +66,7 @@
             <a 
               v-if="link.link"
               :href="link.link"
-              target="__blank"
+              :target="link.disableRedirect ? '' : '__blank'"
             >
               {{ link.name }}
             </a>
@@ -87,15 +87,11 @@
 import Home from '@default-theme/Home.vue'
 import Visualization from './Visualization.vue';
 
-// const os = 'Unknown';
-// if (navigator.appVersion.indexOf('Win') !== -1) OSName="Windows";
-// if (navigator.appVersion.indexOf('Mac') !== -1) OSName="MacOS";
-// if (navigator.appVersion.indexOf('X11') !== -1) OSName="UNIX";
-// if (navigator.appVersion.indexOf('Linux') !== -1) OSName="Linux";
-
 export default {
   extends: Home,
-  components: { Visualization },
+  components: { 
+    Visualization
+  },
   computed: {
     linkSets() {
       return [
@@ -145,8 +141,10 @@ export default {
               link: 'http://tiny.cc/p09q4y',
             },
             {
+              // go to download page because we don't know which flavor of linux they are using
               name: 'Linux',
-              link: 'http://tiny.cc/qy9q4y',
+              disableRedirect: true,
+              link: '/guide/installation.html',
             }
           ]
         }
@@ -212,6 +210,10 @@ export default {
   border: 1px solid white!important;
 }
 
+.links {
+  min-width: 150px;
+  margin-top: 30px;
+}
 </style>
 
 
@@ -235,7 +237,7 @@ export default {
   font-weight: 200
 
 .footer
-  padding: 40px 0
+  padding: 10px 0 40px 0
 
 .links-wrapper
   margin: auto
