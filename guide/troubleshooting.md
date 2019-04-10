@@ -42,3 +42,9 @@ There is currently no way to import existing `VSTs` into the workstation; howeve
 `Vusic` is a stateful application that could very easily enter a weird state. Given that `Vusic` is still a work in progress, this is even more likely. If you receive an unexpected error, the best solution is to reload the application. Go to `View` > `Reload` or use the keyboard shortcut (defaults to `Ctrl+R`). If you can, make sure to save your work before exiting.
 
 We are also in the progress of creating an error reporting mechanism that will automatically send reports to us in the event that an unexpected arises. Until then, [submit an issue on GitHub](https://github.com/dawg/vusic/issues) or use our current error reporting system in [Feature Requests & Bug Reporting](/guide#feature-requests-&-error-reporting) if you do not have a GitHub account.
+
+## Vusic Is Lagging When I Preview A WAV File
+`Vusic` is not currently optimized to handle large `WAV` files. We are aware of this problem and are working torwards a solution.
+
+## Vusic Is Lagging When I Import A MIDI File
+`Vusic` is not optimized to import large MIDI files. This problem is easily fixble when a few optimization tweaks and a solution is currently in our backlog.
