@@ -25,5 +25,4 @@ By default, the models scripts check the Desktop for the pre-trained models, pla
 That's it! You're ready to use `Vusic`.
 
 ## System Requirements
-`Vusic` is kinda lightweight (compared to other DAWs) and should run on most available hardware and platform versions. Since we are running `Google Chrome` under the hood, you can reference their [system requirements page](https://support.google.com/chrome/a/answer/7100626?hl=en) for accurate information.
-
+`Vusic` is kinda lightweight (compared to other DAWs) and should run on most available hardware and platform versions. Since we are running `Google Chrome` under the hood, you can reference their [system requirements page](https://support.google.com/chrome/a/answer/7100626?hl=en) for accurate information. For the machine learning models, you will need [Python](https://www.python.org/).
