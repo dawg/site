@@ -49,6 +49,14 @@ export default {
     deb: { type: String, required: true },
     rpm: { type: String, required: true },
   },
+  data: () => ({
+    userAgent: null,
+    platform: null,
+  }),
+  mounted() {
+    this.userAgent = window.navigator.userAgent
+    this.platform = window.navigator.platform
+  },
   computed: {
     isLinux() {
       return this.os === 'Linux';
@@ -63,22 +71,20 @@ export default {
       return this.os === 'Android' || this.os === 'iOS';
     },
     os() {
-      let userAgent = window.navigator.userAgent
-      let platform = window.navigator.platform
       let macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K']
       let windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE']
       let iosPlatforms = ['iPhone', 'iPad', 'iPod']
       let os = null;
 
-      if (macosPlatforms.indexOf(platform) !== -1) {
+      if (macosPlatforms.indexOf(this.platform) !== -1) {
         os = 'Mac OS';
-      } else if (iosPlatforms.indexOf(platform) !== -1) {
+      } else if (iosPlatforms.indexOf(this.platform) !== -1) {
         os = 'iOS';
-      } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      } else if (windowsPlatforms.indexOf(this.platform) !== -1) {
         os = 'Windows';
-      } else if (/Android/.test(userAgent)) {
+      } else if (/Android/.test(this.userAgent)) {
         os = 'Android';
-      } else if (!os && /Linux/.test(platform)) {
+      } else if (!os && /Linux/.test(this.platform)) {
         os = 'Linux';
       }
 
