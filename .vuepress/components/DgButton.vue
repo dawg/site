@@ -46,6 +46,8 @@ export default {
   width: 200px;
   border: none;
   text-align: center;
+  box-shadow: -1px 4px 28px 1px rgba(0,0,0,0.30);
+  border-radius: 10px;
 }
 
 .button:hover {

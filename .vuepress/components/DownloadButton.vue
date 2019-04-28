@@ -1,30 +1,31 @@
 <template>
-  <div v-if="isLinux" style="display: flex; justify-content: center">
+  <div v-if="isAny" style="display: flex">
     <dg-button 
+      v-if="isLinux"
       :href="deb" 
-      style="margin: 5px"
       large="deb"
       small="Debian, Ubuntu..."
     ></dg-button>
-    <dg-button 
-      :href="rpm" 
-      style="margin: 5px"
+    <div v-if="isLinux" style="margin: 20px"></div>
+    <dg-button
+      v-if="isLinux"
+      :href="rpm"
       large="rpm"
       small="Fedora, Red Hat..."
     ></dg-button>
+    <dg-button
+      v-else-if="isWindows"
+      :href="windows"
+      large="Windows"
+      small="exe"
+    ></dg-button>
+    <dg-button
+      v-else-if="isMacOS"
+      :href="macos"
+      large="Mac OS"
+      small="dmg"
+    ></dg-button>
   </div>
-  <dg-button
-    v-else-if="isWindows"
-    :href="windows"
-    large="Windows"
-    small="exe"
-  ></dg-button>
-  <dg-button
-    v-else-if="isMacOS"
-    :href="macos"
-    large="Mac OS"
-    small="dmg"
-  ></dg-button>
   <div v-else>
     <div class="warning custom-block">
       <p class="custom-block-title">WARNING</p> 
@@ -67,6 +68,9 @@ export default {
     isMacOS() {
       return this.os === 'Mac OS';
     },
+    isAny() {
+      return this.isLinux || this.isWindows || this.isMacOS;
+    },
     isMobile() {
       return this.os === 'Android' || this.os === 'iOS';
     },
@@ -93,3 +97,10 @@ export default {
   },
 }
 </script>
+
+
+<style scoped>
+.dg-button {
+  margin: 5px;
+}
+</style>
