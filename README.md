@@ -6,6 +6,8 @@ heroImage: /logo.svg
 features:
 - title: Cross Platform
   details: Developed using web technologies, Vusic supports all major platforms.
+- title: Superior UI/UX
+  details: Vusic offers an improved UI/UX by levering modern web technology & practices.
 - title: Extensible
   details: Plugins and themes will allow complete customization of the DAW.
 - title: Artificial Intelligence
