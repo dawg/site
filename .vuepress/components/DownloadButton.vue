@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isAny" style="display: flex">
+  <div v-if="isAny" style="display: flex; flex-wrap: wrap">
     <dg-button 
       v-if="isLinux"
       :href="deb" 
@@ -12,6 +12,13 @@
       :href="rpm"
       large="rpm"
       small="Fedora, Red Hat..."
+    ></dg-button>
+    <div v-if="isLinux" style="margin: 20px"></div>
+    <dg-button
+      v-if="isLinux"
+      :href="appImage"
+      large="AppImage"
+      small="Any distribution..."
     ></dg-button>
     <dg-button
       v-else-if="isWindows"
@@ -31,10 +38,10 @@
       <p class="custom-block-title">WARNING</p> 
       <p>
         <div v-if="isMobile">
-          <code>Vusic</code> is not currently available on mobile devices.
+          <code>DAWG</code> is not currently available on mobile devices.
         </div>
         <div v-else>
-          <code>Vusic</code> is not currently on your operating system. Please contact us with your operating system and we will see what we can do.
+          <code>DAWG</code> is not currently on your operating system. Please contact us with your operating system and we will see what we can do.
         </div>    
       </p>
     </div>
@@ -44,21 +51,48 @@
 <script>
 export default {
   name: 'DownloadButton',
-  props: {
-    windows: { type: String, required: true },
-    macos: { type: String, required: true },
-    deb: { type: String, required: true },
-    rpm: { type: String, required: true },
-  },
   data: () => ({
     userAgent: null,
     platform: null,
+    json: null,
+    error: null,
   }),
-  mounted() {
+  async mounted() {
     this.userAgent = window.navigator.userAgent
     this.platform = window.navigator.platform
+
+    try {
+      const response = await fetch('https://api.github.com/repos/dawg/dawg/releases/latest');
+      this.json = await response.json();
+    } catch (e) {
+      this.error = e.message;
+    }
   },
   computed: {
+    tag() {
+      return this.json ? this.json.tag_name : '';
+    },
+    version() {
+      return this.tag.slice(1);
+    },
+    base() {
+      return `https://github.com/dawg/dawg/releases/download/${this.tag}/`;
+    },
+    windows() {
+      return `${this.base}DAWG.Setup.${this.version}.exe`
+    },
+    macos() {
+      return `${this.base}DAWG-${this.version}.dmg`
+    },
+    deb() {
+      return `${this.base}dawg_${this.version}_amd64.deb`
+    },
+    rpm() {
+      return `${this.base}dawg-${this.version}.x86_64.rpm`
+    },
+    appImage() {
+      return `${this.base}DAWG-${this.version}.AppImage`
+    },
     isLinux() {
       return this.os === 'Linux';
     },

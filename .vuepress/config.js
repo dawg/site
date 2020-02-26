@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'VUSIC',
+  title: 'DAWG',
   description: "A Modern Digital Audio Workstation",
   themeConfig: {
     nav: [

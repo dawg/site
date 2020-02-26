@@ -41,9 +41,9 @@ export default {
 .button {
   color: white;
   margin: 20px 0 5px;
-  padding: 10px 0;
+  min-width: 140px;
+  padding: 10px 30px;
   font-size: 1.8rem;
-  width: 200px;
   border: none;
   text-align: center;
   box-shadow: -1px 4px 28px 1px rgba(0,0,0,0.30);

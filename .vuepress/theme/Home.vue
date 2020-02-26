@@ -100,11 +100,11 @@ export default {
           links: [
             {
               name: 'GitHub',
-              link: 'https://github.com/dawg/vusic',
+              link: 'https://github.com/dawg/DAWG',
             },
             {
               name: 'Facebook',
-              link: 'https://github.com/dawg/vusic',
+              link: 'https://github.com/dawg/DAWG',
             },
             {
               name: 'Youtube',
@@ -121,7 +121,7 @@ export default {
             },
             {
               name: 'Bug Report',
-              link: 'https://github.com/dawg/vusic/issues/new',
+              link: 'https://github.com/dawg/DAWG/issues/new',
             },
             {
               name: 'Contact Us',
@@ -200,7 +200,6 @@ export default {
 }
 
 .title, .description, .action-button {
-  font-family: Lato, sans-serif;
   font-weight: 300;
   margin-bottom: 0!important;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="source" :src="src" :alt="alt" @click="open = true">
+    <img class="source" :src="src" :style="style" :alt="alt" @click="open = true">
     <div id="myModal" class="modal" v-if="open" @click="open = false">
       <img class="modal-content" :src="src" :alt="alt">
       <div class="caption">{{ caption }}</div>
@@ -14,6 +14,7 @@ export default {
     src: { type: String, required: true },
     alt: { type: String },
     caption: { type: String },
+    noShadow: { type: Boolean },
   },
   data() {
     return {
@@ -23,6 +24,13 @@ export default {
   methods: {
     close() {
       this.open = false;
+    }
+  },
+  computed: {
+    style() {
+      if (this.noShadow) {
+        return { 'box-shadow': 'none!important' };
+      }
     }
   },
   mounted() {

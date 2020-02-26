@@ -1,19 +1,19 @@
 # User Guide
 ## Getting Started
-Once you have `Vusic` installed on your machine, the next step is to open the software and familiarize yourself with the basics. To do this, find the `Vusic` launch icon and double click it. The software will take a few seconds to initialize and will display a loading animation while this occurs. After loading has been completed, you will see an empty project.
+Once you have `DAWG` installed on your machine, the next step is to open the software and familiarize yourself with the basics. To do this, find the `DAWG` launch icon and double click it. The software will take a few seconds to initialize and will display a loading animation while this occurs. After loading has been completed, you will see an empty project.
 
 <img-modal src="https://i.ibb.co/f046PNm/Screenshot-from-2019-03-10-18-39-44.png" alt="Empty Application"></img-modal>
 
 ## Basics
 ### Command Palette
-The `Command Palette` is a core aspect of Vusic's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to you given your current context.
+The `Command Palette` is a core aspect of DAWG's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to you given your current context.
 
 <img-modal src="https://i.ibb.co/5vg3gDy/Capture.png" alt="Command Palette"></img-modal>
 
 ### Keyboard Shortcuts
-Vusic features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will be located on the right-hand side of the command.
+DAWG features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will be located on the right-hand side of the command.
 
-In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. `Vusic` aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
+In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. `DAWG` aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
 
 ### Layout
 - **Toolbar** - The toolbar is located at the top of the screen and contains project settings, the current playback time, and the play/pause buttons.
@@ -23,7 +23,7 @@ In the future, this list of shortcuts will continue to grow as features are adde
 - **Status Bar** - The status bar contains relevant information such as the currently opened project and the [Cloud Backup](#cloud-backup) status.
 - **Menu bar** - Contains all the sub menus. Also contains the window controls.
 
-<img-modal src="https://i.ibb.co/6wYKD5b/Status-Bar.png" alt="Marked Up Layout"></img-modal>
+<img-modal src="https://i.ibb.co/6wYKD5b/Status-Bar.png" alt="Marked Up Layout" no-shadow></img-modal>
 
 ### Project Settings
 Project settings are located in two locations, the toolbar and from a popup located in the [Activity Bar](#layout). Click the settings icon in the [Activity Bar](#layout) to activate the popup. Currently, the only configurable settings are:
@@ -39,19 +39,19 @@ Adding folders to a workspace is an essential step during the setup process. Thi
 When you press the play button, you could either play the contents of the [Playlist](#playlist) or the currently selected [Pattern](#patterns). The context, defined as either `Playlist` or `Pattern`, specifies which item you actually wish to play. To change this, use the two rectangles on the far right-hand side of the [Toolbar](#layout). If you find yourself switching contexts fairly often, make sure to use the [Keyboard Shortcut](#keyboard-shortcuts).
 
 ## Themes
-`Vusic` comes with several builtin themes. To change your theme, open up the [Command Palette](#command-palette) and select `Change Theme`. As you move with your arrow keys, the themes will preview within the DAW. At the moment, it is not possible to define custom themes.
+`DAWG` comes with several builtin themes. To change your theme, open up the [Command Palette](#command-palette) and select `Change Theme`. As you move with your arrow keys, the themes will preview within the DAW. At the moment, it is not possible to define custom themes.
 
 ## Project Files
-`Vusic` saves the project file to the file system with a `.dg` extension. This enables us to correctly identify project files; however, they are really just `JSON` files in disguise. If you know what you're doing, feel free to open up and modify them in a text editor. Beware of modifying the file's contents though as it will not open correctly if not properly formatted.
+`DAWG` saves the project file to the file system with a `.dg` extension. This enables us to correctly identify project files; however, they are really just `JSON` files in disguise. If you know what you're doing, feel free to open up and modify them in a text editor. Beware of modifying the file's contents though as it will not open correctly if not properly formatted.
 
 ### Saving the Project
 To save a project, navigate to `File` > `Save`. This will open up your operating systems file dialog where you will be able to specify a location to save the current project file. When naming the file, if a `.dg` extension is not provided, it is automatically appended before saving. After choosing the path, the project will be automatically saved to that path every time you press `Save`. To force the application to save to a new file location, use the `File` > `Save As` command.
 
 ### Opening a Project
-Similar to the restrictions on saving a file, we will only let you open up a folder that has a `.dg` extension. Navigate to `File` > `Open` to open up the file dialog. After choosing a new file, `Vusic` will reload and open your new project.
+Similar to the restrictions on saving a file, we will only let you open up a folder that has a `.dg` extension. Navigate to `File` > `Open` to open up the file dialog. After choosing a new file, `DAWG` will reload and open your new project.
 
 ## Audio Files
-Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, `Vusic` checks to see if you've already imported the audio file and adds it to the project if you haven't. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
+Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, `DAWG` checks to see if you've already imported the audio file and adds it to the project if you haven't. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
 
 Audio files are uniquely identified by their path. This means that changing the location of audio files will cause errors in your project. Consequently, moving a project from one computer to another is not very well supported. Better methods to uniquely identify audio files are being researched and will be implemented as soon as possible. When implemented, projects will be able to recover missing audio files using these unique identifiers.
 
@@ -72,7 +72,7 @@ The `Piano Roll` allows you to sequence notes (aka a score) for a specific [Inst
 :::
 
 ## Sequencer
-Sequencing, also know as scheduling events to occur at a particular time, is an essential aspect of music production. For example, you may want to sequence a melody, a chord progression, or a set of audio samples. The `Sequencer` component, used by both the [Playlist](#playlist) and [Piano Roll](#piano-roll), manages all sequencing that occurs within `Vusic`. Although the types of elements that each `Sequencer` is able to sequence may differ, the available tools at your disposal remain almost identical.
+Sequencing, also know as scheduling events to occur at a particular time, is an essential aspect of music production. For example, you may want to sequence a melody, a chord progression, or a set of audio samples. The `Sequencer` component, used by both the [Playlist](#playlist) and [Piano Roll](#piano-roll), manages all sequencing that occurs within `DAWG`. Although the types of elements that each `Sequencer` is able to sequence may differ, the available tools at your disposal remain almost identical.
 
 The layout should feel intuitive if you've ever used a DAW before. Depending on the type of `Sequencer`, each row represents something different (ex. each row in the [Piano Roll](#piano-roll) represents a different note); however, every column represents a location in time, regardless of the exact implementation. Each column, divided by least thick line, represents `1/4th` of a beat. The medium line thickness represents the start/end of a beat and the thickest line represents the start/end of a bar/measure. 
 
@@ -121,7 +121,7 @@ To route an [Instrument](#instruments) to a specific channel, go to the `Instrum
 > An [Instrument](#instruments) routed to channel `0`.
 
 ## Effects
-`Effects` are software or hardware elements that manipulate an audio signal in some way. See [here](https://blog.landr.com/audio-effects-plugins-guide/) for a more detailed overview and some examples. Effects are inserted into channels within the [Mixer](#mixer) and manipulate the instruments that are routed to that particular channel. Vusic currently features the following effects:
+`Effects` are software or hardware elements that manipulate an audio signal in some way. See [here](https://blog.landr.com/audio-effects-plugins-guide/) for a more detailed overview and some examples. Effects are inserted into channels within the [Mixer](#mixer) and manipulate the instruments that are routed to that particular channel. DAWG currently features the following effects:
 
 - Wah
 - Reverb
@@ -138,16 +138,16 @@ To route an [Instrument](#instruments) to a specific channel, go to the `Instrum
 ## Instruments
 Instruments are used as a starting point for different sounds. To create a new instrument, navigate to the `Instruments` panel and click the `Add Instrument` button. This will find a unique name and append a new synthesizer to the instrument list. Using the controls, you can mute the instrument, adjust its gain and panning values, and assign the instrument to a channel (see [Mixer](#mixer)). To change the oscillator, double-click anywhere on the instrument. This will expand the area and display a dropdown where you will be able to select a new oscillator type. Double-click again to close the expanded area.
 
-Currently, we only support our integrated synthesizers and do support other sources such as SoundFonts and VSTs (see [here](/guide/troubleshooting.html#does-vusic-support-vsts) for more information).
+Currently, we only support our integrated synthesizers and do support other sources such as SoundFonts and VSTs (see [here](/guide/troubleshooting.html#does-DAWG-support-vsts) for more information).
 
 ## Playlist
-`Playlists` are a core feature of Vusic's audio system. Similar to FL Studio, the playlist represents the overall composition and may contain [Automation Clips](#automation-clips), [Audio Files](#audio-files), and [Patterns](#patterns). To learn more about sequencing elements in the `Playlist`, visit the [Sequencer](#sequencer) section.
+`Playlists` are a core feature of DAWG's audio system. Similar to FL Studio, the playlist represents the overall composition and may contain [Automation Clips](#automation-clips), [Audio Files](#audio-files), and [Patterns](#patterns). To learn more about sequencing elements in the `Playlist`, visit the [Sequencer](#sequencer) section.
 
 ### Adding Elements
 [Audio Files](#audio-files) and [Patterns](#patterns) are added to the `Playlist` through a drag-and-drop mechanism. Open up either of the `Audio Files` or `Patterns` tabs and drag the [Audio File](#audio-files) or [Pattern](#patterns) the desired location within the `Playlist`. See the [Automation Clip](#automation-clips) section to learn how to add [Automation Clips](#automation-clips) to the `Playlist`.
 
 ## Automation Clips
-Automation clips allow you to automate parameters found within Vusic's interface. When `VST` support is added (see [here](/guide/troubleshooting.html#does-vusic-support-vsts)), you will also be able to automate any parameter found within third-party synthesizers or effects. To automate a value, right click on the item you would like to automate and select `Create Automation Clip`. Vusic will find the first available track in the [Playlist](#playlist) and create a new `Automation Clip`. If the loop start and end bounds are set within the `Sequencer`, the `Automation Clip` will respect those bounds when created.
+Automation clips allow you to automate parameters found within DAWG's interface. When `VST` support is added (see [here](/guide/troubleshooting.html#does-DAWG-support-vsts)), you will also be able to automate any parameter found within third-party synthesizers or effects. To automate a value, right click on the item you would like to automate and select `Create Automation Clip`. DAWG will find the first available track in the [Playlist](#playlist) and create a new `Automation Clip`. If the loop start and end bounds are set within the `Sequencer`, the `Automation Clip` will respect those bounds when created.
 
 <img-modal src="https://i.ibb.co/xzWmjp0/automation.png" alt="Automation Clip"></img-modal>
 > An automation clip for the instrument volume.
@@ -159,7 +159,7 @@ A newly created `Automation Clip` will have two values by default, one at the st
 Currently, it is only possible to automate [Instrument](#instruments) and [Mixer](#mixer) parameters. Support for effect automation is in progress.
 
 ## Cloud Backup
-Cloud integration is one of the features that sets Vusic apart from other workstations. Currently, only basic cloud backup is supported; however, we have big plans for the future.
+Cloud integration is one of the features that sets DAWG apart from other workstations. Currently, only basic cloud backup is supported; however, we have big plans for the future.
 
 ### Backing Up Your Project
 To initiate the backup mechanism, open up the settings popup and toggle `Cloud Backup`. If this setting is disabled, make sure that the `Project Name` field is not empty. Once this is activated, anytime you save the project, a copy will be pushed to a cloud database. We currently use Google's `Firebase` for fast, reliable, and secure storage. Beware, there is currently no authentication system so your project file will be visible to everyone if synced to the cloud.
@@ -171,14 +171,14 @@ To restore a project that is stored in the cloud, to go `File` > `Open From Back
 
 <img-modal src="https://i.ibb.co/3d0rNMF/backups.png" alt="Projects Modal"></img-modal>
 
-Simply choose the project you wish to restore and Vusic will handle the rest.
+Simply choose the project you wish to restore and DAWG will handle the rest.
 
 ::: warning
 Make sure to save your project before opening a project from the cloud.
 :::
 
 ## Machine Learning Models
-`Vusic` is taking full advantage of recent advances in machine learning technology by embedding Vocal Separation and Automatic Piano Transcription models. The Vocal Separation model separates vocals from a complete song into a distinct track. The Automatic Piano Transcription model transcribes a piano track to a MIDI file. Both models output their resulting files to the project resources.
+`DAWG` is taking full advantage of recent advances in machine learning technology by embedding Vocal Separation and Automatic Piano Transcription models. The Vocal Separation model separates vocals from a complete song into a distinct track. The Automatic Piano Transcription model transcribes a piano track to a MIDI file. Both models output their resulting files to the project resources.
 
 ### Vocal Separation
 To separate the vocals from a full track, simply double click a song in the File Explorer to open it in the `Sample Tab` and click `Separate`. This component is only compatible with `.wav` file formats.

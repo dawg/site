@@ -1,28 +1,28 @@
 # Overview
-## What is Vusic?
-First and foremost, `Vusic` is a Digital Audio Workstation (DAW). It strives to provide all of the features expected out of a modern workstation while providing flexibility, extensibility, and new technology that leverages recent advances in machine learning.
+## What is DAWG?
+First and foremost, `DAWG` is a Digital Audio Workstation (DAW). It strives to provide all of the features expected out of a modern workstation while providing flexibility, extensibility, and new technology that leverages recent advances in machine learning.
 
-## Should you use Vusic?
-`Vusic` is in its early stages of development and is still missing a lot of small features that are present in DAWs such as [FL Studio](https://www.image-line.com/flstudio/) and [Ableton](https://www.ableton.com/en/). The features that do exist are not yet stable and may change at any time. Furthermore, `Vusic` still contains lots of hidden bugs that we have not found yet. If your adventurous and want to try something new, `Vusic` is for you.
+## Should you use DAWG?
+`DAWG` is in its early stages of development and is still missing a lot of small features that are present in DAWs such as [FL Studio](https://www.image-line.com/flstudio/) and [Ableton](https://www.ableton.com/en/). The features that do exist are not yet stable and may change at any time. Furthermore, `DAWG` still contains lots of hidden bugs that we have not found yet. If your adventurous and want to try something new, `DAWG` is for you.
 
 ## Next Steps
-### Install Vusic
+### Install DAWG
 Follow the installation instructions located on our installation page.
 
-[➡ Vusic Installation Guide](/guide/installation.html)
+[➡ DAWG Installation Guide](/guide/installation.html)
 
 ### Follow Our User Guide
-See the user guide for instructions on how to use `Vusic`.
+See the user guide for instructions on how to use `DAWG`.
 
-[➡ Vusic User Guide](/guide/user_guide.html)
+[➡ DAWG User Guide](/guide/user_guide.html)
 
 ### Troubleshoot
-See the trouble page for common issues and questions that you may encounter while using `Vusic`.
+See the trouble page for common issues and questions that you may encounter while using `DAWG`.
 
-[➡ Vusic Troubleshooting Guide](/guide/troubleshooting.html)
+[➡ DAWG Troubleshooting Guide](/guide/troubleshooting.html)
 
 ## Feature Requests & Bug Reporting
-`Vusic` currently has a [Trello Board](https://trello.com/b/ZOLQJGSv/vusic-feature-requests) to manage feature requests and bug reports. In the board, you should see what features have been requested, bugs that currently exist, which items are being worked on, and the ones that will be worked on next. You can also upvote and add comments to existing items. 
+`DAWG` currently has a [Trello Board](https://trello.com/b/ZOLQJGSv/DAWG-feature-requests) to manage feature requests and bug reports. In the board, you should see what features have been requested, bugs that currently exist, which items are being worked on, and the ones that will be worked on next. You can also upvote and add comments to existing items. 
 
 ### Submitting Items
 To submit a new feature request or bug report, send an email to:
