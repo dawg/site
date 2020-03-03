@@ -134,17 +134,19 @@ export default {
           links: [
             {
               name: 'Windows',
-              link: 'http://tiny.cc/ur9q4y',
+              disableRedirect: true,
+              link: '/guide/installation.html?system=windows',
             },
             {
               name: 'macOS',
-              link: 'http://tiny.cc/p09q4y',
+              disableRedirect: true,
+              link: '/guide/installation.html?system=mac',
             },
             {
               // go to download page because we don't know which flavor of linux they are using
               name: 'Linux',
               disableRedirect: true,
-              link: '/guide/installation.html',
+              link: '/guide/installation.html?system=linux',
             }
           ]
         }

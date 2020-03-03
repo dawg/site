@@ -94,36 +94,45 @@ export default {
       return `${this.base}DAWG-${this.version}.AppImage`
     },
     isLinux() {
-      return this.os === 'Linux';
+      return this.os === 'linux';
     },
     isWindows() {
-      return this.os === 'Windows';
+      return this.os === 'windows';
     },
     isMacOS() {
-      return this.os === 'Mac OS';
+      this.$rout
+      return this.os === 'mac';
     },
     isAny() {
       return this.isLinux || this.isWindows || this.isMacOS;
     },
     isMobile() {
-      return this.os === 'Android' || this.os === 'iOS';
+      return this.os === 'android' || this.os === 'ios';
+    },
+    params() {
+      let uri = window.location.search.substring(1); 
+      return new URLSearchParams(uri);
     },
     os() {
+      if (this.params.has('system')) {
+        return this.params.get('system');
+      }
+
       let macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K']
       let windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE']
       let iosPlatforms = ['iPhone', 'iPad', 'iPod']
       let os = null;
 
       if (macosPlatforms.indexOf(this.platform) !== -1) {
-        os = 'Mac OS';
+        os = 'mac';
       } else if (iosPlatforms.indexOf(this.platform) !== -1) {
-        os = 'iOS';
+        os = 'ios';
       } else if (windowsPlatforms.indexOf(this.platform) !== -1) {
-        os = 'Windows';
+        os = 'windows';
       } else if (/Android/.test(this.userAgent)) {
-        os = 'Android';
+        os = 'android';
       } else if (!os && /Linux/.test(this.platform)) {
-        os = 'Linux';
+        os = 'linux';
       }
 
       return os;
