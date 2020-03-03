@@ -177,6 +177,7 @@ export default {
   flex-direction: column;
   align-items: center;
   padding-bottom: 40px;
+  min-height: calc(100vh - 3.6rem);
 }
 
 .feature p {

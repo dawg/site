@@ -54,12 +54,14 @@ export default {
   data: () => ({
     userAgent: null,
     platform: null,
+    location: null,
     json: null,
     error: null,
   }),
   async mounted() {
     this.userAgent = window.navigator.userAgent
     this.platform = window.navigator.platform
+    this.location = window.location;
 
     try {
       const response = await fetch('https://api.github.com/repos/dawg/dawg/releases/latest');
@@ -110,7 +112,11 @@ export default {
       return this.os === 'android' || this.os === 'ios';
     },
     params() {
-      let uri = window.location.search.substring(1); 
+      if (!this.location) {
+        return new URLSearchParams();
+      }
+
+      let uri = this.location.search.substring(1); 
       return new URLSearchParams(uri);
     },
     os() {
