@@ -5,6 +5,10 @@ Downloading and installing `DAWG` should only take a few minutes. It is a fairly
 
 Want to see all of our releases? Check out our [releases page](https://github.com/dawg/dawg/releases).
 
+::: warning
+`DAWG` is still in development and very unstable. Have fun with it but don't expect to be able to do much at the moment 😊
+:::
+
 ## Including Machine Learning Models
 To utilize the vocal isolation and piano transcription models, the [repository](https://github.com/dawg/models) must first be cloned. Within DAWG, click the Settings icon and add the path to the cloned repository in the `Models Path` field.
 

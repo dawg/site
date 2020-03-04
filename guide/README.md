@@ -22,21 +22,4 @@ See the trouble page for common issues and questions that you may encounter whil
 [➡ DAWG Troubleshooting Guide](/guide/troubleshooting.html)
 
 ## Feature Requests & Bug Reporting
-`DAWG` currently has a [Trello Board](https://trello.com/b/ZOLQJGSv/DAWG-feature-requests) to manage feature requests and bug reports. In the board, you should see what features have been requested, bugs that currently exist, which items are being worked on, and the ones that will be worked on next. You can also upvote and add comments to existing items. 
-
-### Submitting Items
-To submit a new feature request or bug report, send an email to:
-```
-jacobsmith134+ohblspel6c56xp3w0hwe@boards.trello.com
-````
-
-This will automatically add a new card to the `Feature Requests` list. If appropriate, we will move your request to the `Bugs` list when we see it. Here are details from the [Trello website](https://help.trello.com/article/809-creating-cards-by-email) on how to format your email:
-```
-- The Subject of the email becomes the card's title.
-- The Body of the email becomes the card's description.
-- Attachments in the email will be added to the card.
-- Labels (Optional): In the subject, add #labelname, #labelcolor, or #labelnumber
-```
-
-### General Inquiries
-To submit a general inquiry, please complete a [Contact Form](https://goo.gl/forms/GGCyGyheN8ZuQM6x2).
+`DAWG` currently uses [GitHub Issues](https://github.com/dawg/dawg/issues) to manage feature requests and bug reports. You'll have to create an account to be able to submit issues. Once you have an account though you can also upvote and add comments to existing items.

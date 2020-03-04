@@ -6,12 +6,12 @@ Once you have `DAWG` installed on your machine, the next step is to open the sof
 
 ## Basics
 ### Command Palette
-The `Command Palette` is a core aspect of DAWG's navigation system and is accessible using the `Ctrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to you given your current context.
+The `Command Palette` is a core aspect of DAWG's navigation system and is accessible using the `CmdOrCtrl+Shift+P` keyboard shortcut. Once you open the palette, use your up and down keys to navigate the available commands. This feature aims to list all commands that are currently available to you given your current context.
 
 <img-modal src="https://i.ibb.co/5vg3gDy/Capture.png" alt="Command Palette"></img-modal>
 
 ### Keyboard Shortcuts
-DAWG features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `Ctrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will be located on the right-hand side of the command.
+DAWG features a wide variety of keyboard shortcuts to help you quickly access features without moving your mouse. The easiest way to view these shortcuts at the moment is by accessing the [Command Palette](#command-palette) using the `CmdOrCtrl+Shift+P` shortcut. After the palette comes up, you will see a full list of the available shortcuts that you currently have access to. If available, the shortcuts will be located on the right-hand side of the command.
 
 In the future, this list of shortcuts will continue to grow as features are added and the shortcut technology is enhanced. `DAWG` aims to provide an extensibility mechanism that allows anyone to modify the default shortcuts to suit their needs and preferences.
 
@@ -25,21 +25,23 @@ In the future, this list of shortcuts will continue to grow as features are adde
 
 <img-modal src="https://i.ibb.co/6wYKD5b/Status-Bar.png" alt="Marked Up Layout" no-shadow></img-modal>
 
+### Workspace Configuration
+`DAWG` saves configuration information that is related to your project (although not apart of the project) in your workspace configuration. For example, when the application is closes, the opened tabs are serialized the the file system so that when you open up a project the exact same tabs are opened. This all happens behind the scenes but it is important to understand that each project will have its own "workspace" configuration.
+
+### Global Configuration
+`DAWG` also stores "global" configuration information which, unlike "workspace" configuration, affects *all* projects. For example, the folders you have opened in your [File Explorer](#file-explorer) are synced across all projects. As stated above, this all happens behind the scenes :)
+
 ### Project Settings
-Project settings are located in two locations, the toolbar and from a popup located in the [Activity Bar](#layout). Click the settings icon in the [Activity Bar](#layout) to activate the popup. Currently, the only configurable settings are:
-
-- **BPM** - The [beats per minute](https://en.wikipedia.org/wiki/BPM_(Beats_per_Minute)) of the project.
-- **Name** - The project name. This is used for cloud backup.
-- **Backup** - Whether to push changes to the cloud. See the [cloud backup](#cloud-backup) section for more information.
-
-### Workspace Folders
-Adding folders to a workspace is an essential step during the setup process. This will enable you to import and use `WAV` files within the project. If you haven't added any folders yet, you will immediately see the `Open Folder` button when you open the project. Since you can add more than one folder to your workspace, navigate to `File` > `Add Folder to Workspace` to add more folders. These folders will be persisted across projects as they are common to a computer rather than a project.
+Project settings are located in two locations, the toolbar and from a popup located in the [Activity Bar](#layout). Click the settings icon in the [Activity Bar](#layout) to activate the popup. In the toolbar, you will be able to change the [BPM](https://en.wikipedia.org/wiki/BPM_(Beats_per_Minute)) and eventually the time signature. In the settings, you will find the full list of configurable parameters (e.g. the project name, whether to backup your project). This information can be stored in one of three location: the actual [Project File](#project-files), the [Global Configuration](#global-configuration) or the [Workspace Configuration](#workspace-configuration).
 
 ### Contexts
 When you press the play button, you could either play the contents of the [Playlist](#playlist) or the currently selected [Pattern](#patterns). The context, defined as either `Playlist` or `Pattern`, specifies which item you actually wish to play. To change this, use the two rectangles on the far right-hand side of the [Toolbar](#layout). If you find yourself switching contexts fairly often, make sure to use the [Keyboard Shortcut](#keyboard-shortcuts).
 
 ## Themes
 `DAWG` comes with several builtin themes. To change your theme, open up the [Command Palette](#command-palette) and select `Change Theme`. As you move with your arrow keys, the themes will preview within the DAW. At the moment, it is not possible to define custom themes.
+
+## History
+`DAWG` keeps a detailed history of all your actions which you can view by navigating to the `History` tab in the [Activity Bar](#activity-bar). From there, you can see your history and seek a particular point in time. Furthermore, you can use the common `CtrlOrCmd+Z` and `CtrlOrCmd+Shift+Z` to undo and redo respectively.
 
 ## Project Files
 `DAWG` saves the project file to the file system with a `.dg` extension. This enables us to correctly identify project files; however, they are really just `JSON` files in disguise. If you know what you're doing, feel free to open up and modify them in a text editor. Beware of modifying the file's contents though as it will not open correctly if not properly formatted.
@@ -49,6 +51,9 @@ To save a project, navigate to `File` > `Save`. This will open up your operating
 
 ### Opening a Project
 Similar to the restrictions on saving a file, we will only let you open up a folder that has a `.dg` extension. Navigate to `File` > `Open` to open up the file dialog. After choosing a new file, `DAWG` will reload and open your new project.
+
+### Exporting a Project
+Navigate to `File` > `Export` to start the export process. Note that due to current limitations, we have to export the project in real-time (ie. if your song is 1 minute long it will take 1 minute to export).
 
 ## Audio Files
 Audio files can be imported into the project using the [Workspace Folders](#workspace-folders). Currently, the only way to import audio files into the project is by dragging audio files from the opened folders into the [Playlist](#playlists). Every time you drag in a new file, `DAWG` checks to see if you've already imported the audio file and adds it to the project if you haven't. These audio files are displayed in the `Audio Files` tab within the [Activity Bar](#layout). The audio files listed in the `Audio Files` tab can also be dragged into the [Playlist](#playlists). To remove an audio file from your project, right-click and select `Delete` from the dropdown.
@@ -80,7 +85,7 @@ The layout should feel intuitive if you've ever used a DAW before. Depending on 
 To add an element, just click anywhere within the `Sequencer`. Depending on the type of `Sequencer`, this may or may not work. For example, with a [Piano Roll](#piano-roll), the only type of element is a note. Therefore, when you click within a `Piano Roll`, a note will always appear. In contrast, in `Sequencers` such as the [Playlist](#playlist), no default is provided. For such systems, you must add an element first before another can be created by clicking. Refer to the specific `Sequencer` information section for more information about adding the initial item.
 
 ### Removing Elements
-To delete a scheduled element, right-click on the element you wish to remove. It is also possible to remove more than one element at once using [Batch Operations](#batch-operations).
+To delete a scheduled element, right-click on the element you wish to remove. It is also possible to remove more than one element at once using [Selection Tool](#selection-tool).
 
 ### Copying an Element
 To copy an element, just click on it. Afterward, anytime you click within the `Sequencer` a copy will appear. Another way to copy an element is by holding `Shift`, pressing down on the element you wish to copy, and dragging to the desired location.
@@ -88,11 +93,22 @@ To copy an element, just click on it. Afterward, anytime you click within the `S
 ### Changing Element Duration
 To change the length of an element, hover your mouse ever the right-hand side of an element until you see the two-sided horizontal arrow. Press down on your mouse and drag horizontally until the desired length is obtained.
 
-### Batch Operations
+### Selection Tool
 Sequencing elements can easily become tedious. To avoid this problem, moving, copying, and changing the duration of an element can all be batched by first selecting a group of elements and then applying the desired operation to a single element. For example, if you want to move all of the notes in the `Piano Roll` to a new octave, you could select all of the notes using the selection tool and then drag one of the notes to the desired octave. Since all of the notes are selected, they will all move in unison. To select a group of elements, press down within the `Sequencer` (not on an element) and drag your mouse such that the desired elements are selected. Furthermore, it is possible to delete selected elements using the `Del` key.
 
+::: tip press down
+To use the selection tool, select the hand that is "pointing" in the top-left corner of the sequencer.
+:::
+
+### Slicing
+Slicing is a tool that allows you to quickly cut a [Sample](#sample), [Pattern](#patterns) or [Automation Clip](#automation-clips) in two. Slicing will occur if and only if the line overlaps with at least 50% of the vertical portion of an element and will occur at the middle point between the intersection of the line with the top and bottom of the element. This may sound a bit confusing but it should be pretty intuitive once you start using it!
+
+::: tip Tip
+To use the slicer tool, select the hand that is making the "scissors" symbol in the top-left corner of the sequencer.
+:::
+
 ### Grid Snapping
-Currently, elements are snapped to the grid at every `1/4` beat. This means that when you try to schedule an element or when you try to change the duration of a note, you can only do so in `1/4` beat increments. An adjustable snapping mechanism is currently in the development process and should be available soon. This feature will allow you to change the snap value to values such as `1/2`, `1/8`, `1/16`, etc.
+Grid snapping helps you while scheduling elements in the [Playlist](#playlist) and [Piano Roll](#piano-roll). In the sequencer, the number next to the upside down horseshoe magnet indicates the current snap value (measured in steps). By default, this value is set to `1` but is easily changed by clicking on the the magnet. To remove snapping completely, hold down on the `Alt` (Windows/Linux) or `⌥` (Mac) performing operations in the sequencer. For example, this value is used while changing the start time of an element or its duration.
 
 ### Seeking a Position
 To seek a particular time in the `Sequencer`, click a position on the timeline. The timeline cursor will automatically seek that position, even if it is currently in its playback state and will restart playback from the chosen position.
@@ -101,7 +117,7 @@ To seek a particular time in the `Sequencer`, click a position on the timeline. 
 > A view of the first 9 timeline bars. The timeline cursor is currently at time `0` (the start of beat `1`).
 
 ### Previewing & Looping
-To preview your creation, make sure you are in the correct [context](#contexts) and press play. This will play all of the elements in your sequence before starting over at the beginning. If you wish to loop a section of the sequence, press down on the start position (or end position) on the timeline and drag your mouse to end position (or start position). The loop start and end can be altered by pressing down on the end you wish to change and dragging to the desired position. To remove the loop, simply double-click anywhere within the timeline.
+To preview your creation, make sure you are in the correct [context](#contexts) and press play. This will play all of the elements in your sequence before starting over at the beginning. If you wish to loop a section of the sequence, right-click on the timeline and start to drag your mouse. The loop start and end can be altered by pressing down on the end you wish to change and dragging to the desired position. To remove the loop, simply right-click anywhere within the timeline.
 
 <img-modal src="https://i.ibb.co/Y2SLM50/looping.png" alt="Looping"></img-modal>
 > An image of the [Piano Roll](#piano-roll) with a loop set between the `3rd` and `7th` bars.
@@ -145,6 +161,9 @@ Currently, we only support our integrated synthesizers and do support other sour
 
 ### Adding Elements
 [Audio Files](#audio-files) and [Patterns](#patterns) are added to the `Playlist` through a drag-and-drop mechanism. Open up either of the `Audio Files` or `Patterns` tabs and drag the [Audio File](#audio-files) or [Pattern](#patterns) the desired location within the `Playlist`. See the [Automation Clip](#automation-clips) section to learn how to add [Automation Clips](#automation-clips) to the `Playlist`.
+
+## File Explorer
+Adding folders to a workspace is an essential step during the setup process. This will enable you to import and use `WAV` files within the project. If you haven't added any folders yet, you will immediately see the `Open Folder` button when you open the project. Since you can add more than one folder to your workspace, navigate to `File` > `Add Folder to Workspace` to add more folders. These folders will be persisted across projects as they are common to a computer rather than a project.
 
 ## Automation Clips
 Automation clips allow you to automate parameters found within DAWG's interface. When `VST` support is added (see [here](/guide/troubleshooting.html#does-DAWG-support-vsts)), you will also be able to automate any parameter found within third-party synthesizers or effects. To automate a value, right click on the item you would like to automate and select `Create Automation Clip`. DAWG will find the first available track in the [Playlist](#playlist) and create a new `Automation Clip`. If the loop start and end bounds are set within the `Sequencer`, the `Automation Clip` will respect those bounds when created.

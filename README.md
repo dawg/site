@@ -12,5 +12,5 @@ features:
   details: Plugins and themes will allow complete customization of the DAW.
 - title: Artificial Intelligence
   details: Using recent advancements in the field of Machine Learning, DAWG offers cutting-edge vocal extraction and piano note transcription.
-footer: © DAWG 2019
+footer: © DAWG 2020
 ---
