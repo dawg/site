@@ -1,6 +1,6 @@
 module.exports = {
   title: 'DAWG',
-  description: "A Modern Digital Audio Workstation",
+  description: "A DAW built using the web 🤘",
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/' },
